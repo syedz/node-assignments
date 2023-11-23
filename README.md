@@ -126,6 +126,8 @@ To simplify this project, I decided to make use of a JSON file (`basic-api/data/
 
 The idea was to follow the principle of "lean controllers" and "rich models". In the future, data attributes regarding each student would be saved as class variables in the `StudentModel`.
 
+Regarding the cursor functionality, ideally I would have a `pageNum` and `pageCount` variable sent as part of the request. However, the sample endpoint only had `cursor`, so I decided to implement pagination with just that.
+
 ## Getting Started
 
 Navigate to the project and install dependencies:
@@ -192,7 +194,34 @@ Retrieve student details.
 }
 ```
 
-### Get student
+### Get all students
+
+**Request**
+
+`GET /students`
+
+Return all students
+
+**Response**
+
+```
+{
+  "status": "success",
+  "data": {
+    "students": [
+      {
+        "id": 1,
+        "first_name": "Zeeshan",
+        "last_name": "Syed",
+        "email": "zs@gmail.com"
+      },
+      ...
+    ]
+  }
+}
+```
+
+### Get students with cursor
 
 **Request**
 
