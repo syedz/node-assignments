@@ -16,7 +16,7 @@ exports.getAllStudents = (req, res, next) => {
 
 exports.getStudentById = (req, res, next) => {
   const studentId = req.params.studentId * 1;
-  const student = students.filter((std) => std.id == studentId);
+  const student = students.filter((std) => std.id === studentId);
 
   res.status(200).json({
     status: 'success',
@@ -45,4 +45,39 @@ exports.createStudent = (req, res, next) => {
       });
     }
   );
+};
+
+exports.updateStudent = (req, res) => {
+  const studentId = req.params.studentId * 1;
+  const updatedStudent = Object.assign(req.body);
+  const updatedStudents = students.map((std) => (std.id === studentId ? { ...std, ...updatedStudent } : std));  
+
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(updatedStudents),
+    err => {
+      console.log(err);
+      res.status(200).json({
+        status: 'success',
+        data: null
+      });
+    }
+  );
+};
+
+exports.deleteStudent = (req, res) => {
+  const studentId = req.params.studentId * 1;
+  const filteredStudents = students.filter((std) => std.id !== studentId);  
+
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(filteredStudents),
+    err => {
+      console.log(err);
+      res.status(204).json({
+        status: 'success',
+        data: null
+      });
+    }
+  );  
 };

@@ -11,5 +11,7 @@ router
 router
   .route('/:studentId')
   .get(studentController.getStudentById)
+  .put(studentController.updateStudent)
+  .delete(studentController.deleteStudent)
 
 module.exports = router;
