@@ -12,35 +12,49 @@
       width: 400px;
     }
 
-    input {
-      height: 35px;
-      width: 100%;
+    #message-form {
+      display: flex;
+    }
+
+    #message-form input {
+      height: 36px;
+      width: 200px;
+      padding: 0 10px;
+    }
+
+    #message-form button {
+      height: 40px;
+      width: 100px;
     }
 
     #messages {
       list-style-type: none;
-      margin: 0;
+      margin: 10px 0;
       padding: 0;
     }
 
     #messages li {
-      padding: 5px 10px;
+      padding: 10px;
     }
 
-    #message li:nth-child(odd) {
-      background: #aaa;
+    #messages li:nth-child(odd) {
+      background: #EEE;
+    }
+
+    #messages li span.user {
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <form class="row" id="message-form">
+    <form id="message-form">
       <div>
         <input id="user-message" type="text" placeholder="Enter your message" />
       </div>
       <div>
-        <input class="btn btn-primary" type="submit" value="Send!" />
+        <button type="submit">Send</button>
       </div>
     </form>
 
@@ -62,7 +76,12 @@
     socket.on('newMessageToClients', (data) => {
       document
         .querySelector('#messages')
-        .innerHTML += `<li>${data.text}</li>`;
+        .innerHTML += `
+          <li>
+            <span class="user">${data.socketId}:</span>
+            ${data.text}
+          </li>
+        `;
     });
 
     document

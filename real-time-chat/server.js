@@ -20,6 +20,7 @@ io.on('connection', (socket) => {
   socket.on('newMessageToServer', (data) => {
     console.log(`Data from ${socket.id}:`, data);
     io.emit('newMessageToClients', {
+      socketId: socket.id,
       text: data.text
     });
   });
