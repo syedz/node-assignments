@@ -21,7 +21,7 @@ const getNumberOfClassesOffered = async () => {
   return Class.countDocuments();
 }
 
-exports.getSummaries = async(req, res, next) => {
+exports.getSummaries = async(_, res) => {
   try {
     const [
       totalStudents,
