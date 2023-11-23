@@ -8,6 +8,8 @@ Application was made using MongoDB Atlas, Mongoose and Express. The app is divid
 
 Mongoose was the chosen ODM as it provides a higher level of abstraction. It allows for rapid and simple development of MongoDB database interactions. Mongoose schemas were used to model our data, by describing the structure of the data. In the future, it can be used to set default values, and validation. The Mongoose model acts as a wrapper for the schema, providing an interface to the database for CRUD operations.
 
+In `statsController.js`, the `Promise.all()` function was used so that each Promise could be executed in parallel. This avoids the use of too many callbacks, nested Promises, and unrelated async calls blocking each other.
+
 ## Getting Started
 
 Navigate to the project and install dependencies:
