@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "60d7dd3b32205c8d6c02f6e1",
+    "Subject": "History",
+    "Teacher": "60d7dd3b32205c8d6c02f6df",
+    "NumberOfStudents": 30
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6e2",
+    "Subject": "English",
+    "Teacher": "60d7dd3b32205c8d6c02f6e0",
+    "NumberOfStudents": 25
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6e3",
+    "Subject": "Physics",
+    "Teacher": "60d7dd3b32205c8d6c02f6e0",
+    "NumberOfStudents": 28
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6e4",
+    "Subject": "Chemistry",
+    "Teacher": "60d7dd3b32205c8d6c02f6df",
+    "NumberOfStudents": 32
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6e5",
+    "Subject": "Geography",
+    "Teacher": "60d7dd3b32205c8d6c02f6e0",
+    "NumberOfStudents": 25
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6e6",
+    "Subject": "Computer Science",
+    "Teacher": "60d7dd3b32205c8d6c02f6df",
+    "NumberOfStudents": 30
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6e7",
+    "Subject": "Literature",
+    "Teacher": "60d7dd3b32205c8d6c02f6e0",
+    "NumberOfStudents": 27
+  }
+]

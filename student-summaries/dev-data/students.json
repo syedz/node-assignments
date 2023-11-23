@@ -1,0 +1,51 @@
+[
+  {
+    "_id": "60d7dd3b32205c8d6c02f6d3",
+    "Name": "John Doe",
+    "Age": 20,
+    "Grade": "A",
+    "Class": "60d7dd3b32205c8d6c02f6e1"
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6d4",
+    "Name": "Jane Smith",
+    "Age": 22,
+    "Grade": "B",
+    "Class": "60d7dd3b32205c8d6c02f6e2"
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6d5",
+    "Name": "Alice Johnson",
+    "Age": 21,
+    "Grade": "A",
+    "Class": "60d7dd3b32205c8d6c02f6e3"
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6d6",
+    "Name": "Bob Miller",
+    "Age": 19,
+    "Grade": "B",
+    "Class": "60d7dd3b32205c8d6c02f6e4"
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6d7",
+    "Name": "Eva White",
+    "Age": 20,
+    "Grade": "A",
+    "Class": "60d7dd3b32205c8d6c02f6e1"
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6d8",
+    "Name": "David Lee",
+    "Age": 22,
+    "Grade": "B",
+    "Class": "60d7dd3b32205c8d6c02f6e3"
+  },
+  {
+    "_id": "60d7dd3b32205c8d6c02f6d9",
+    "Name": "Sophie Anderson",
+    "Age": 21,
+    "Grade": "A",
+    "Class": "60d7dd3b32205c8d6c02f6e2"
+  }
+]
