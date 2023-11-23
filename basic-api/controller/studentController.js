@@ -6,12 +6,23 @@ const students = JSON.parse(
 );
 
 exports.getAllStudents = (req, res, next) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      students: students
-    }
-  });
+  let cursor = req.query.cursor * 1;
+  if (cursor) {
+    let filteredStudents = students.slice(0, cursor);
+    res.status(200).json({
+      status: 'success',
+      data: {
+        students: filteredStudents
+      }
+    });
+  } else {
+    res.status(200).json({
+      status: 'success',
+      data: {
+        students: students
+      }
+    });
+  }
 };
 
 exports.getStudentById = (req, res, next) => {
@@ -59,7 +70,7 @@ exports.updateStudent = (req, res) => {
       console.log(err);
       res.status(200).json({
         status: 'success',
-        data: null
+        data: updatedStudent
       });
     }
   );
