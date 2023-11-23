@@ -15,7 +15,7 @@ In `statsController.js`, the `Promise.all()` function was used so that each Prom
 Navigate to the project and install dependencies:
 
 ```
-cd student-summaries
+cd data-aggregations
 ```
 
 ```
@@ -124,7 +124,7 @@ Send a message from one of the browser tabs by using the text box. After pressin
 
 ## Summary
 
-To simplify this project, I decided to make use of a JSON file (`basic-api/data/students.json`) to store all of the student information. Similar to the `student-summaries` project, models were used to house the CRUD functionality, while routes organized the routing, and controllers acted as the middle-man.
+To simplify this project, I decided to make use of a JSON file (`basic-api/data/students.json`) to store all of the student information. Similar to the `data-aggregations` project, models were used to house the CRUD functionality, while routes organized the routing, and controllers acted as the middle-man.
 
 The idea was to follow the principle of "lean controllers" and "rich models". In the future, data attributes regarding each student would be saved as class variables in the `StudentModel`.
 
