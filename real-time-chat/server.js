@@ -17,7 +17,10 @@ io.on('connection', (socket) => {
     data: 'Welcome from the server'
   });
 
-  socket.on('messageFromClient', (data) => {
+  socket.on('newMessageToServer', (data) => {
     console.log(`Data from ${socket.id}:`, data);
+    io.emit('newMessageToClients', {
+      text: data.text
+    });
   });
 });
