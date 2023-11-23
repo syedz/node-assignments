@@ -1,8 +1,8 @@
 # Idea Theorem Interview Assignment
 
-## Project 1: Data Aggregation System
+# Project 1: Data Aggregation System
 
-### Getting Started
+## Getting Started
 
 Navigate to the project and install dependencies:
 
@@ -41,13 +41,11 @@ Run the server:
 npm run dev
 ```
 
-###
-
 ## API Calls
 
 ### Get summary
 
-An endpoint that provides summaries like the total number of students, the average age of students, and the number of classes offered.
+An endpoint that provides summaries of the total number of students, the average age of students, and the number of classes offered.
 
 **Request**
 
@@ -60,15 +58,6 @@ curl -i -H 'Accept: application/json' http://localhost:3002/stats/summaries
 **Response**
 
 ```
-HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 96
-ETag: W/"60-cNgqEu11uNPotRtjBcf4L/McLa4"
-Date: Thu, 23 Nov 2023 15:14:16 GMT
-Connection: keep-alive
-Keep-Alive: timeout=5
-
 {
    "status":"success",
    "data":{
@@ -79,6 +68,174 @@ Keep-Alive: timeout=5
 }
 ```
 
-## Project 2: Real-Time Communication Feature
+# Project 2: Real-Time Communication Feature
 
-## Project 3: Basic API with Scalability Considerations
+## Getting Started
+
+Navigate to the project and install dependencies:
+
+```
+cd real-time-chat
+```
+
+```
+npm install
+```
+
+Run the server:
+
+```
+npm run dev
+```
+
+## Usage
+
+Navigate to [http://localhost:3000/](http://localhost:3000/) in 2 browser tabs
+
+Notice the following on the server:
+
+```
+Client: <some-socket-id> has connected
+Client: <some-other-socket-id> has connected
+```
+
+Notice similar messages in the console of each browser:
+
+```
+Client: <some-socket-id>
+Server says: { data: "Welcome from the server" }
+```
+
+Send a message from one of the browser tabs by using the text box. After pressing "Send", notice the output on all open browser tabs.
+
+# Project 3: Basic API with Scalability Considerations
+
+## Getting Started
+
+Navigate to the project and install dependencies:
+
+```
+cd basic-api
+```
+
+```
+npm install
+```
+
+Run the server:
+
+```
+npm run dev
+```
+
+> Data is being loaded/saved in `basic-api/data/students.json`
+
+## API Calls
+
+### Add new student
+
+**Request**
+
+`POST /students`
+
+Add a new student.
+
+**Body**
+
+```
+{
+  "first_name": "John",
+  "last_name": "Smith",
+  "email": "js@gmail.com"
+}
+```
+
+### Get student
+
+**Request**
+
+`GET /students/{id}`
+
+Retrieve student details.
+
+**Response**
+
+```
+{
+  "status": "success",
+  "data": {
+    "student": [
+      {
+        "id": 4,
+        "first_name": "Emily",
+        "last_name": "Smith",
+        "email": "emily.smith@example.com"
+      }
+    ]
+  }
+}
+```
+
+### Get student
+
+**Request**
+
+`GET /students?cursor={cursor}`
+
+After sending a number, response will contain the users from 1 - {cursor}. Example `/students?cursor=3` returns the first 3 users.
+
+**Response**
+
+```
+{
+  "status": "success",
+  "data": {
+    "students": [
+      {
+        "id": 1,
+        "first_name": "Zeeshan",
+        "last_name": "Syed",
+        "email": "zs@gmail.com"
+      },
+      {
+        "id": 2,
+        "first_name": "Aisha",
+        "last_name": "Khan",
+        "email": "aisha.khan@example.com"
+      },
+      {
+        "id": 3,
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "john.doe@gmail.com"
+      }
+    ]
+  }
+}
+```
+
+### Update student
+
+**Request**
+
+`PUT /students/{id}`
+
+Update student information.
+
+**Body**
+
+```
+{
+  "first_name": "Emily Mary",
+  "last_name": "Smith",
+  "email": "emily.mary.smith@example.com"
+}
+```
+
+### Delete student
+
+**Request**
+
+`DELETE /students/{id}`
+
+Remove a student.
