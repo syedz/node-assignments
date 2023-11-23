@@ -5,6 +5,10 @@ const students = JSON.parse(
   fs.readFileSync(jsonFilePath)
 );
 
+/**
+ * MOVE ALL OF THIS TO A MODEL
+ */
+
 exports.getAllStudents = (req, res, next) => {
   let cursor = req.query.cursor * 1;
   if (cursor) {
