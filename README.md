@@ -2,6 +2,12 @@
 
 # Project 1: Data Aggregation System
 
+## Summary
+
+Application was made using MongoDB Atlas, Mongoose and Express. The app is divided into models, routes, and controllers. The most difficult part of this challenge was populating the database. So I created an import script located at `dev-data/import-dev-data.js` to streamline the testing process.
+
+Mongoose was the chosen ODM as it provides a higher level of abstraction. It allows for rapid and simple development of MongoDB database interactions. Mongoose schemas were used to model our data, by describing the structure of the data. In the future, it can be used to set default values, and validation. The Mongoose model acts as a wrapper for the schema, providing an interface to the database for CRUD operations.
+
 ## Getting Started
 
 Navigate to the project and install dependencies:
@@ -70,6 +76,10 @@ curl -i -H 'Accept: application/json' http://localhost:3002/stats/summaries
 
 # Project 2: Real-Time Communication Feature
 
+## Summary
+
+This project was pretty straight-forward as it doesn't offer much functionality. If there was more time given, I would implement namespaces & rooms. As this can allow us to create communication channels, which allows us to split the logic of the app over a single shared connection (also called multiplexing).
+
 ## Getting Started
 
 Navigate to the project and install dependencies:
@@ -109,6 +119,12 @@ Server says: { data: "Welcome from the server" }
 Send a message from one of the browser tabs by using the text box. After pressing "Send", notice the output on all open browser tabs.
 
 # Project 3: Basic API with Scalability Considerations
+
+## Summary
+
+To simplify this project, I decided to make use of a JSON file (`basic-api/data/students.json`) to store all of the student information. Similar to the `student-summaries` project, models were used to house the CRUD functionality, while routes organized the routing, and controllers acted as the middle-man.
+
+The idea was to follow the principle of "lean controllers" and "rich models". In the future, data attributes regarding each student would be saved as class variables in the `StudentModel`.
 
 ## Getting Started
 
