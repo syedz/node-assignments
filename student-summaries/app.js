@@ -1,6 +1,6 @@
 const express = require('express');
 
-const studentRouter = require('./routes/studentRoutes');
+const statsRouter = require('./routes/statsRoutes');
 
 // Start express app
 const app = express();
@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 });
 app.use(express.json());
 
-app.use('/students', studentRouter);
+app.use('/stats', statsRouter);
 
 app.all('*', (req, res, next) => {
   next(new Error(`Can't find ${req.originalUrl} on this server!`, 404));

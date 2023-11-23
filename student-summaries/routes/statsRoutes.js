@@ -1,10 +1,10 @@
 const express = require('express');
-const studentController = require('../controllers/studentController');
+const studentController = require('../controllers/statsController');
 
 const router = express.Router();
 
 router
   .route('/summaries')
-  .get(studentController.getStudentSummaries);
+  .get(studentController.getSummaries);
 
 module.exports = router;
